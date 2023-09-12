@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import DashboardOne from './DashbaordOne';
+import DashboardTwo from './DashboardTwo';
 const { Header, Content, Footer } = Layout;
 const App = () => {
+  const [tab, setTab] = useState('1');
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+
   return (
     <Layout className="layout">
       <Header
@@ -18,14 +22,21 @@ const App = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={new Array(3).fill(null).map((_, index) => {
-            const key = index + 1;
-            return {
-              key,
-              label: `nav ${key}`,
-            };
-          })}
+          defaultSelectedKeys={[tab]}
+          items={[
+            {
+              key: '1',
+              label: <span onClick={() => setTab('1')}>One</span>,
+            },
+            {
+              key: '2',
+              label: <span onClick={() => setTab('2')}>Two</span>,
+            },
+            {
+              key: '3',
+              label: <span onClick={() => setTab('3')}>Three</span>,            
+            }
+          ]}
         />
       </Header>
       <Content
@@ -39,7 +50,12 @@ const App = () => {
             background: colorBgContainer,
           }}
         >
-          <DashboardOne/>
+          {
+            tab === '1' && <DashboardOne/>
+          }
+          {
+            tab === '2' && <DashboardTwo/>
+          }
         </div>
       </Content>
       <Footer

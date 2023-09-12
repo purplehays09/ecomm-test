@@ -17,7 +17,7 @@ export default function DashboardOne() {
       {
         [...Array(8)].map((_, index) => {
           return (
-            <Card title={`Category ${index + 1}`} bordered={true}>
+            <Card title={`Category ${index + 1}`} bordered={true} hoverable>
               <Row gutter={[4,4]}>
                 <Col span={9}>    
                   <Skeleton.Image/>
