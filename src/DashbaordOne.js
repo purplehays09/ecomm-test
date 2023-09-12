@@ -15,16 +15,15 @@ export default function DashboardOne() {
     <>
       <h1>Dashboard One</h1>
       {
-        [...Array(10)].map((_, index) => {
+        [...Array(8)].map((_, index) => {
           return (
-            <Card title={`Product ${index}`} bordered={true}>
-              <Row>
-                <Col span={15}>    
+            <Card title={`Category ${index + 1}`} bordered={true}>
+              <Row gutter={[4,4]}>
+                <Col span={9}>    
                   <Skeleton.Image/>
                   <Skeleton/>
                 </Col>
-                <Col span={3}/>
-                <Col span={6}>
+                <Col span={15}>
                   <Carousel autoplay>
                   <div>
                     <h3 style={contentStyle}>1</h3>

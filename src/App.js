@@ -19,7 +19,7 @@ const App = () => {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
-          items={new Array(15).fill(null).map((_, index) => {
+          items={new Array(3).fill(null).map((_, index) => {
             const key = index + 1;
             return {
               key,
@@ -33,15 +33,6 @@ const App = () => {
           padding: '0 50px',
         }}
       >
-        <Breadcrumb
-          style={{
-            margin: '16px 0',
-          }}
-        >
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
         <div
           className="site-layout-content"
           style={{
