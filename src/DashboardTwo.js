@@ -37,24 +37,27 @@ export default function DashboardTwo() {
         />
       }
       {
-        <List
-          grid={{
-            gutter: 2,
-            xs: 1,
-            sm: 2,
-            md: 3,
-            lg: 3,
-            xl: 6,
-            xxl: 12,
-          }}
-          dataSource={[...Array(20).keys()]}
-          renderItem={item => (
+        <Card title={`Category ${products}`} bordered={false}>
+
+          <List
+            grid={{
+              gutter: 2,
+              xs: 1,
+              sm: 2,
+              md: 3,
+              lg: 3,
+              xl: 6,
+              xxl: 12,
+            }}
+            dataSource={[...Array(20).keys()]}
+            renderItem={item => (
               <Card style={{margin: '1%'}} bordered={true} hoverable cover={<img alt="example" src={images[products - 1]} />}>
-                <Card.Meta title={`Product ${item}`} description={`Description ${item}`} />
-              </Card>
-            )
-          }
-        />
+                  <Card.Meta title={`Product ${item}`} description={`Description ${item}`} />
+                </Card>
+              )
+            }
+          />
+        </Card>
       }
     </>
   )
