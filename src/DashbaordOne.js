@@ -3,21 +3,13 @@ import React from 'react'
 
 export default function DashboardOne() {
 
-  const contentStyle = {
-    margin: 0,
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-  };
   return(
     <>
       <h1>Dashboard One</h1>
       {
         [...Array(8)].map((_, index) => {
           return (
-            <Card title={`Category ${index + 1}`} bordered={true} hoverable>
+            <Card title={`Category ${index + 1}`} bordered={true} hoverable style={{margin: '1%'}}>
               {
                 index % 2 === 0 ?
                   <Row gutter={[4,4]}>
